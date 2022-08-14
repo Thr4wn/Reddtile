@@ -1,0 +1,17 @@
+<!-- A few notes regarding the sidebar rendering: this is modeled on the w3schools sidebar tutorial. However, the button will be a toggle
+    and not have a separate close button in the sidebar. There are two separate HTML components: the button will always be rendered, and the 
+    'Sidebar' div will only be rendered when a 'showSideBar' variable is toggled to true.-->
+<div id="sidebarMenu" class="sidebar">
+    <a href="#">Subreddit 1</a>
+    <a href="#">Subreddit 2</a>
+    <a href="#">Subreddit 3</a>
+    <a href="#">Subreddit 4</a>
+    <a href="#">Subreddit 5</a>
+    <a href="#">Subreddit 6</a>
+    <a href="#">Subreddit 7</a>
+    <a href="#">Subreddit 8</a>
+</div>
+
+<div id="main">
+    <button class="btn" onClick={menuToggle}>Subreddits</button>
+</div>
