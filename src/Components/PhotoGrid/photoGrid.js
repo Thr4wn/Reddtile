@@ -1,10 +1,10 @@
 import React from 'react';
-import { post } from '../Post/post';
+import { Post } from '../Post/post';
 
-export function photoGrid() {
+export const PhotoGrid = ({ items }) => {
     return (
     <div className="photoGrid">
-        <post />
+        {items.map((item, index) => (<Post key={index} item={item} /> ))}
     </div>
-    )
+    );
 };

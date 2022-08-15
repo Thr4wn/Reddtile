@@ -1,14 +1,19 @@
 import React from 'react';
 
-export function post() {
+export const Post = ({ item }) => {
+const {
+    title,
+    image,
+    author,
+    date
+} = item;
     return (
     <div className="post">
-    <div className="post-info">
-        <h3>TITLE OF POST</h3>
-        <img src="#" />
-        <p>author of post</p>
-        <button className="comments" onClick={commentToggle}>comments</button>
+        <h3>{title}</h3>
+        <img src={image} />
+        <p>{author}</p>
+        <p>{date}</p>
+        <button className="comments">comments</button>
     </div>
-</div>
     )
-}
+};

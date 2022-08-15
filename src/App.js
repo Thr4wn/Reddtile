@@ -1,27 +1,16 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { fakeData } from './Components/FakeData/fakeData';
+import { PhotoGrid } from './Components/PhotoGrid/photoGrid';
+
 
 export default function App() {
 
-  const [search, newSearch] = useState('');
+  const [items, newItems] = useState(fakeData);
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <PhotoGrid items={items} />
     </div>
   );
 }
