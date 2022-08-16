@@ -9,27 +9,83 @@ export const fakeData = [
         image: img1,
         author: 'author1',
         date: '11/12/22',
-        comments: ['comment1', 'comment2', 'comment3']
+        comments: [ {
+            author: 'comment-author 1',
+            date: '11/12/22',
+            body: 'comment1', 
+        },
+        {
+            author: 'comment-author 2',
+            date: '11/12/22',
+            body: 'comment2', 
+        },
+        {
+            author: 'comment-author 3',
+            date: '11/12/22',
+            body: 'comment3', 
+        }]
     },
     {
         title: 'Title2',
         image: img2,
         author: 'author2',
         date: '11/12/22',
-        comments: ['comment1', 'comment2', 'comment3']
+        comments: [ {
+            author: 'comment-author 1',
+            date: '11/12/22',
+            body: 'comment1', 
+        },
+        {
+            author: 'comment-author 2',
+            date: '11/12/22',
+            body: 'comment2', 
+        },
+        {
+            author: 'comment-author 3',
+            date: '11/12/22',
+            body: 'comment3', 
+        }]
     },
     {
         title: 'Title3',
         image: img3,
         author: 'author3',
         date: '11/12/22',
-        comments: ['comment1', 'comment2', 'comment3']
+        comments: [ {
+            author: 'comment-author 1',
+            date: '11/12/22',
+            body: 'comment1', 
+        },
+        {
+            author: 'comment-author 2',
+            date: '11/12/22',
+            body: 'comment2', 
+        },
+        {
+            author: 'comment-author 3',
+            date: '11/12/22',
+            body: 'comment3', 
+        }]
     },
     {
         title: 'Title4',
         image: img4,
         author: 'author4',
         date: '11/12/22',
-        comments: ['comment1', 'comment2', 'comment3']
+        comments: [ {
+            author: 'comment-author 1',
+            date: '11/12/22',
+            body: 'comment1', 
+        },
+        {
+            author: 'comment-author 2',
+            date: '11/12/22',
+            body: 'comment2', 
+        },
+        {
+            author: 'comment-author 3',
+            date: '11/12/22',
+            body: 'comment3', 
+        }]
     },
 ];

@@ -1,11 +1,11 @@
 //Comment List component will map over comments and display them across the Photo Grid part of the screen.
 import React from 'react';
-import { comment } from '../Comment/comment';
+import { Comment } from '../Comment/Comment';
 
-export function commentList() {
-    return (
+export const CommentList = ({ comments }) => {
+   return (
         <div className="commentList">
-        <comment /> 
+        {comments.map((item, index) => (<Comment key={index} item={item} /> ))}
         </div>
     );
-};
+}; 

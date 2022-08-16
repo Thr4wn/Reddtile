@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import { fakeData } from './Components/FakeData/fakeData';
-import { PhotoGrid } from './Components/PhotoGrid/photoGrid';
+import { PhotoGrid } from './Components/PhotoGrid/PhotoGrid';
 
 
 export default function App() {
