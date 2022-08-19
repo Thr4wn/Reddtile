@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 
+export function SubReddit () {
+
+    
 const [showSideBar, setShowSideBar] = useState(false);
 
 const toggleMenu = event => {
     setShowSideBar(current => !current);
 }
-export function SubReddit () {
     
         if (!showSideBar) {
             return (
