@@ -8,19 +8,12 @@ import { SubReddit } from './Components/SubReddit/SubReddit';
 
 export default function App() {
 
-
-  const [searchTerm, setSearchTerm] = useState('');
   const [items, setItems] = useState(fakeData);
 
-  /*const onSearch = (input) => {
-    setSearchTerm(current => input);
-    getItems(searchTerm);
+    const onSearch = (input) => {
+      const matches = fakeData.filter(element => (element.title.includes(input)));
+      setItems(matches);
   };
-
-  const getItems = searchTerm => {
-    const matches = fakeData.filter(element => (element.title.includes(searchTerm)));
-    setItems(current => matches);
-  };*/
 /* Once fakeData is removed, it will be necessary to set create an API call that pulls the most popular posts and factors the data 
 before passing it to the initial state. SearchBar will also need this API call function - perhaps this should be its own component?
 It may be easiest to do this in Router as it is in the adopt-a-pet starter project search function */
@@ -29,7 +22,7 @@ It may be easiest to do this in Router as it is in the adopt-a-pet starter proje
     <div className="App">
       <div className="Header">
         <h2><span>R</span>eddtile</h2>
-        <SearchBar /*onSearch={onSearch}*/ />
+        <SearchBar onSearch={onSearch} />
         <SubReddit />
       </div>
       <PhotoGrid items={items} />
