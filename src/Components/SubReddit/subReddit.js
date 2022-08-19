@@ -1,17 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 
+const [showSideBar, setShowSideBar] = useState(false);
 
-const showSideBar = false;
-
-const toggleMenu = () => {
-    showSideBar = !showSideBar;
+const toggleMenu = event => {
+    setShowSideBar(current => !current);
 }
-export function subReddit () {
+export function SubReddit () {
     
         if (!showSideBar) {
             return (
             <div id="main">
-            <button className="btn" onClick={toggleMenu}>Subreddits</button>
+                <button className="btn" onClick={toggleMenu}>Subreddits</button>
             </div>
         )} else if (showSideBar) {
             return (

@@ -1,10 +1,10 @@
 import React from 'react';
 
-export function searchBar () {
+export const SearchBar = () => {
     return (
         <div className="SearchBar">
-        <input placeholder="Search..." />
-        <button className="SearchButton">SEARCH</button>
+            <input placeholder="Search..." />
+            <button className="SearchButton">SEARCH</button>
         </div>
     )
 };
