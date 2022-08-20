@@ -27,7 +27,7 @@ It may be easiest to do this in Router as it is in the adopt-a-pet starter proje
         <SearchBar onSearch={onSearch} />
         <SubReddit />
       </div>
-      <div className='body'>
+      <div className="body">
         <PhotoGrid items={items} />
       </div>
     </div>

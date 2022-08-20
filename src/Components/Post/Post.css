@@ -1,0 +1,42 @@
+.post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    margin: 10vw;
+}
+
+.post h3 {
+    font-size: 1.5rem;
+    word-wrap: break-word;
+
+}
+
+.post img {
+    border-radius: 5%;
+    max-width: 25vw;
+
+
+}
+
+.info {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 25vw;
+
+}
+
+.info p {
+    color: #afafb4;
+    opacity: 0.8;
+    margin: 0.25rem;
+
+}
+
+.comments {
+    border-radius: 5px;
+    background-color: #afafb4;
+    opacity: 0.8;
+    border: 0px;
+
+}

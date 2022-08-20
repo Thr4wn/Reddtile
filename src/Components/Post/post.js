@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { CommentList } from '../CommentList/CommentList';
+import './Post.css';
 
 export const Post = ({ item }) => {
 const {
@@ -20,8 +21,10 @@ const {
     <div className="post">
         <h3>{title}</h3>
         <img src={image} />
-        <p>{author}</p>
-        <p>{date}</p>
+        <div className="info">
+            <p>{author}</p>
+            <p>{date}</p>
+        </div>
         <button className="comments" onClick={toggleComments}>comments</button>
         {showComments && <CommentList comments={comments} />}
     </div>
