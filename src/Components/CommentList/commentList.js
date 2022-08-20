@@ -3,9 +3,10 @@ import React from 'react';
 import { Comment } from '../Comment/Comment';
 import './CommentList.css';
 
-export const CommentList = ({ comments, toggleComment }) => {
+export const CommentList = ({ comments, toggleComments }) => {
    return (
-        <div className="commentBackground" onClick={toggleComment}>
+        <div className="wrapper">
+            <span className="commentBackground" onClick={toggleComments}></span>
             <div className="commentList">
                 {comments.map((item, index) => (<Comment key={index} item={item} /> ))}
             </div>

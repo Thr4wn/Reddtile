@@ -1,0 +1,14 @@
+.comment {
+    background: white;
+    opacity: 1;
+    z-index: 5;
+    padding-left: 1rem;
+    padding-right: 2rem;
+
+}
+
+.info {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 30vw;;
+}

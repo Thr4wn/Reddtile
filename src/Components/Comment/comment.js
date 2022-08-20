@@ -1,4 +1,5 @@
 import React from 'react';
+import './Comment.css';
 
 export const Comment = ({ item }) => {
 
@@ -11,8 +12,10 @@ export const Comment = ({ item }) => {
 
     return (
     <div className="comment">
-        <h4>{author}</h4>
-        <h5>{date}</h5>
+        <div className="info">
+            <h4>{author}</h4>
+            <h4>{date}</h4>
+        </div>
         <p>{body}</p>
     </div>
     )

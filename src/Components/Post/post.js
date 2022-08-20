@@ -26,7 +26,7 @@ const {
             <p>{date}</p>
         </div>
         <button className="comments" onClick={toggleComments}>comments</button>
-        {showComments && <CommentList comments={comments} onClick={toggleComments} />}
+        {showComments && <CommentList comments={comments} toggleComments={toggleComments} />}
     </div>
     )
 };

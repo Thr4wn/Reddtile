@@ -1,19 +1,30 @@
-.commentBackground {
-    background: slategrey;
-    z-index: 1;
-    position: absolute;
-    height: 100vh;
-    transition: 0.5s;
-    opacity: 0.75;
-    align-items: center;
+.wrapper {
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    position: fixed;
 
 }
 
+.commentBackground {
+    background: slategrey;
+    z-index: 1;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    transition: 0.5s;
+    opacity: 0.8;
+}
+
 .commentList {
-    position: relative;
-    width: 50vw;
+    display: flex;
+    flex-direction: column;
     background: white;
-    z-index: 2;
     margin: 10vw;
+    z-index: 2;
     opacity: 1;
+
 }
