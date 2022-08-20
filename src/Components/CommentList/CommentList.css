@@ -1,0 +1,19 @@
+.commentBackground {
+    background: slategrey;
+    z-index: 1;
+    position: absolute;
+    height: 100vh;
+    transition: 0.5s;
+    opacity: 0.75;
+    align-items: center;
+
+}
+
+.commentList {
+    position: relative;
+    width: 50vw;
+    background: white;
+    z-index: 2;
+    margin: 10vw;
+    opacity: 1;
+}
