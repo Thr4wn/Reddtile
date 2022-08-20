@@ -1,0 +1,38 @@
+.SearchBar form {
+    display: inline-flex;
+    position: relative;
+    width: 30rem;
+    align-items: center;
+}
+
+.SearchBar input {
+    border-radius: 5px;
+    border: 1px darkslategray;
+    box-shadow: 0px 2px 2px #afafb4;
+    height: 2rem;
+    width: 100%;
+    opacity: 0.75;
+}
+
+.SearchBar input[type="text"], textarea {
+    background-color: gainsboro;
+}
+
+.SearchButton {
+    border: 0px;
+    border-radius: 5px;
+    height: 2rem;
+    font-size: .75rem;
+    margin: 0.5rem;
+    background-color: gainsboro;  
+    border: 1px darkslategray;
+    box-shadow: 0px 2px 2px #afafb4;
+    opacity: 0.75;
+    color: darkslategray;
+
+}
+
+.SearchBar input[type="text"]:focus, textarea:focus {
+    background-color: white;
+    outline: 2px darkslategray;
+}

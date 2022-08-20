@@ -21,11 +21,15 @@ It may be easiest to do this in Router as it is in the adopt-a-pet starter proje
   return (
     <div className="App">
       <div className="Header">
-        <h2><span>R</span>eddtile</h2>
+        <div className="Logo">
+          <h2><span>R</span>eddtile</h2>
+        </div>
         <SearchBar onSearch={onSearch} />
         <SubReddit />
       </div>
-      <PhotoGrid items={items} />
+      <div className='body'>
+        <PhotoGrid items={items} />
+      </div>
     </div>
   );
 }

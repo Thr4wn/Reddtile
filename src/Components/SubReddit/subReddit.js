@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './SubReddit.css';
 
 export function SubReddit () {
 
@@ -11,7 +12,7 @@ const toggleMenu = event => {
     
         if (!showSideBar) {
             return (
-            <div id="main">
+            <div className="main">
                 <button className="btn" onClick={toggleMenu}>Subreddits</button>
             </div>
         )} else if (showSideBar) {
