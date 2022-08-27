@@ -1,31 +1,29 @@
-import React, { useState } from 'react';
-import './SubReddit.css';
+import React from 'react';
+import { slide as Menu } from 'react-burger-menu';
 
-export function SubReddit () {
+export const SubReddit = ({ showSidebar }) => {
 
-    
-const [showSideBar, setShowSideBar] = useState(false);
+  return (
+    <Menu right customBurgerIcon={false} isOpen={showSidebar} >
+      <a className="menu-item" href="/sub1">
+        Subreddit 1
+      </a>
 
-const toggleMenu = event => {
-    setShowSideBar(current => !current);
-}
-    
-        if (!showSideBar) {
-            return (
-            <div className="main">
-                <button className="btn" onClick={toggleMenu}>Subreddits</button>
-            </div>
-        )} else if (showSideBar) {
-            return (
-            <div id="sidebarMenu" class="sidebar">
-                <a href="#">Subreddit 1</a>
-                <a href="#">Subreddit 2</a>
-                <a href="#">Subreddit 3</a>
-                <a href="#">Subreddit 4</a>
-                <a href="#">Subreddit 5</a>
-                <a href="#">Subreddit 6</a>
-                <a href="#">Subreddit 7</a>
-                <a href="#">Subreddit 8</a>
-            </div>
-    )};
+      <a className="menu-item" href="/sub2">
+       Subreddit 2
+      </a>
+
+      <a className="menu-item" href="/sub3">
+        Subreddit 3
+      </a>
+
+      <a className="menu-item" href="/sub4">
+        Subreddit 4
+      </a>
+
+      <a className="menu-item" href="/sub5">
+       Subreddit 5
+      </a>
+    </Menu>
+  );
 };

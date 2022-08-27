@@ -26,5 +26,6 @@
     margin: 10vw;
     z-index: 2;
     opacity: 1;
+    transition: 0.5s;
 
 }
