@@ -4,6 +4,7 @@ import { fakeData } from './Components/FakeData/fakeData';
 import { PhotoGrid } from './Components/PhotoGrid/PhotoGrid';
 import { SearchBar } from './Components/SearchBar/SearchBar';
 import { SubReddit } from './Components/SubReddit/SubReddit';
+import { Tester } from './Components/Tester/Tester';
 
 
 export default function App() {
@@ -38,6 +39,7 @@ It may be easiest to do this in Router as it is in the adopt-a-pet starter proje
         <button className="btn" onClick={toggleMenu}>Subreddits</button>
       </div>
       <div className="body">
+        <Tester />
         <PhotoGrid items={items} />
       </div>
     </div>
