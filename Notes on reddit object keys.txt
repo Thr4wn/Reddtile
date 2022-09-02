@@ -1,0 +1,8 @@
+title
+author
+subreddit (?)
+url ---- this is the media destination
+for comments, you have to change urls - this is very dependent on the post, structure as follows:
+
+https://www.reddit.com/r/${subreddit}/comments/${id}/${title}.json (?limit=x - if you desire)
+

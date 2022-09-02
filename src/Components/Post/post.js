@@ -5,9 +5,9 @@ import './Post.css';
 export const Post = ({ item }) => {
 const {
     title,
-    image,
+    media,
     author,
-    date,
+    subreddit,
     comments
 } = item;
 
@@ -20,10 +20,10 @@ const {
     return (
     <div className="post">
         <h3>{title}</h3>
-        <img src={image} />
+        <img src={media} />
         <div className="info">
             <p>{author}</p>
-            <p>{date}</p>
+            <p>{}</p>
         </div>
         <button className="comments" onClick={toggleComments}>comments</button>
         {showComments && <CommentList comments={comments} toggleComments={toggleComments} />}

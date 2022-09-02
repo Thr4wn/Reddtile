@@ -5,7 +5,8 @@ import './PhotoGrid.css';
 export const PhotoGrid = ({ items }) => {
     return (
     <div className="photoGrid">
-        {items.map((item, index) => (<Post key={index} item={item} /> ))}
+        { console.log(items) }
+       { items.map((item, index) => (<Post key={index} item={item} /> ))}
     </div>
     );
 };

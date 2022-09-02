@@ -4,17 +4,19 @@
     align-items: center;
     background-color: white;
     margin: 10vw;
+    width: 25%;
 }
 
 .post h3 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     word-wrap: break-word;
 
 }
 
 .post img {
     border-radius: 5%;
-    max-width: 25vw;
+    width: 25vw;
+    height: auto;
 
 
 }

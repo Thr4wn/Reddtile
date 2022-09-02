@@ -5,8 +5,7 @@ export const Comment = ({ item }) => {
 
     const {
         author,
-        body,
-        date
+        body
     } = item;
     
 
@@ -14,7 +13,7 @@ export const Comment = ({ item }) => {
     <div className="comment">
         <div className="info">
             <h4>{author}</h4>
-            <h4>{date}</h4>
+            <h4></h4>
         </div>
         <p>{body}</p>
     </div>

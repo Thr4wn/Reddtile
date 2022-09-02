@@ -1,14 +1,17 @@
-import React from 'react';
+/* This works by calling getPostData from App.js. getPostData receives the term and calls the async function redditTest to return the JSON
+object from the reddit API. After this is returned, getPostData iterates over it and pulls the necessary key:value pairs into the data 
+array. It also calls the async function getComments, which returns the comment object from Reddit and then calls comment Extractor
+in order to format and return the comments. The comments are returned as a nested object within the data object back up in getPostData
+and the whole is shipped off to App.js to be distributed through the components. */
 
-export const Tester = () => {
-const subreddit = 'hot';
-const limit = 10;
+const removeAmp = url => {
+    return url.replaceAll('amp;', '');
+};
 
-
-const redditTest = async () => {
-
+const redditTest = async (searchTerm) => {
+    const limit = 10;
     try {
-        const response = await fetch(`https://www.reddit.com/${subreddit}.json?limit=${limit}`);
+        const response = await fetch(`https://www.reddit.com/${searchTerm}.json?limit=${limit}`);
         if (response.ok) {
             const jsonResponse = await response.json();
             return jsonResponse;
@@ -20,23 +23,23 @@ const redditTest = async () => {
 
 };
 
-const getPostData = async () => {
-    const listings = await redditTest();
-    const children = listings.data.children
-    let data = [{}];
+export const getPostData = async (searchTerm) => {
+    const listings = await redditTest(searchTerm);
+    const children = listings.data.children;
+    console.log(children);
+    const data = [{}];
     for (let i = 0; i < children.length; i++) {
         const comments = await getComments(children[i]);
-        console.log(comments);
         data[i] = {
            author: children[i].data.author,
            subreddit: children[i].data.subreddit,
            title: children[i].data.title,
            media: children[i].data.url,
            comments: comments,
+        }
     }
-    console.log(data[0]);
+    console.log(data);
     return data;
-}
 };
 
 const getComments = async (child) => {
@@ -62,13 +65,3 @@ const commentExtractor = (json) => {
     }
     return comments;
 };
-
-const hope = getPostData();
-
-
-return (
-    <div className="tester">
-        {hope[0]}
-    </div>
-)
-}
