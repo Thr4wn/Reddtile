@@ -23,7 +23,7 @@ const {
         <img src={media} />
         <div className="info">
             <p>{author}</p>
-            <p>{}</p>
+            <p>{subreddit}</p>
         </div>
         <button className="comments" onClick={toggleComments}>comments</button>
         {showComments && <CommentList comments={comments} toggleComments={toggleComments} />}

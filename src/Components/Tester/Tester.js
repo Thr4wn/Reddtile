@@ -1,7 +1,9 @@
-/* This works by calling getPostData from App.js. getPostData receives the term and calls the async function redditTest to return the JSON
-object from the reddit API. After this is returned, getPostData iterates over it and pulls the necessary key:value pairs into the data 
-array. It also calls the async function getComments, which returns the comment object from Reddit and then calls comment Extractor
-in order to format and return the comments. The comments are returned as a nested object within the data object back up in getPostData
+/* This works by calling getPostData from App.js. getPostData receives the term and calls the async function
+ redditTest to return the JSON object from the reddit API. 
+ After this is returned, getPostData iterates over it and pulls the necessary key:value pairs into the data 
+array. It also calls the async function getComments, which returns the comment object from Reddit
+and then calls comment Extractor in order to format and return the comments. 
+The comments are returned as a nested object within the data object back up in getPostData
 and the whole is shipped off to App.js to be distributed through the components. */
 
 const removeAmp = url => {
@@ -9,9 +11,9 @@ const removeAmp = url => {
 };
 
 const redditTest = async (searchTerm) => {
-    const limit = 10;
+    const limit = 20;
     try {
-        const response = await fetch(`https://www.reddit.com/${searchTerm}.json?limit=${limit}`);
+        const response = await fetch(`https://www.reddit.com/r/${searchTerm}.json?limit=${limit}`);
         if (response.ok) {
             const jsonResponse = await response.json();
             return jsonResponse;
@@ -29,15 +31,18 @@ export const getPostData = async (searchTerm) => {
     console.log(children);
     const data = [{}];
     for (let i = 0; i < children.length; i++) {
-        const comments = await getComments(children[i]);
-        data[i] = {
+        if (children[i].data.domain.includes('i.redd.it')) {
+            let c = 0;
+            const comments = await getComments(children[i]);
+            data[c] = {
            author: children[i].data.author,
            subreddit: children[i].data.subreddit,
            title: children[i].data.title,
            media: children[i].data.url,
            comments: comments,
         }
-    }
+        c++;
+    }}
     console.log(data);
     return data;
 };
