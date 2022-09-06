@@ -8,7 +8,7 @@ const {
     media,
     author,
     subreddit,
-    comments
+    permalink
 } = item;
 
     const [showComments, setShowComments] = useState(false);
@@ -26,7 +26,7 @@ const {
             <p>{subreddit}</p>
         </div>
         <button className="comments" onClick={toggleComments}>comments</button>
-        {showComments && <CommentList comments={comments} toggleComments={toggleComments} />}
+        {showComments && <CommentList permalink={permalink} toggleComments={toggleComments} />}
     </div>
     )
 };

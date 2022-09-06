@@ -12,8 +12,8 @@ export default function App() {
   const [sidebar, setSideBar] = useState(false);
   const [searchTerm, setSearchTerm] = useState('popular');
   const [items, setItems] = useState([]);
-  /* getPostData should return a formatted JSON response from reddit. The defaulst value is 
-  'hot' to get the most popular posts from reddit */
+  /* getPostData should return a formatted JSON response from reddit. The default value is 
+  'popular' to get the most popular posts from reddit */
 useEffect(() => {
 const getData = async (searchTerm) => {
   const results = await getPostData(searchTerm);
