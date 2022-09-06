@@ -56,3 +56,14 @@ export const getComments = async (permalink) => {
     }
 };
 
+export const getSubreddits = async () => {
+    try {
+        const response = await fetch(`https://www.reddit.com/subreddits.json`);
+    if (response.ok) {
+        const jsonResponse = await response.json();
+        return jsonResponse.data.children;
+     }
+    } catch (err) {
+        console.log(err);
+    }
+};
