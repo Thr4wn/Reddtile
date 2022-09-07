@@ -10,7 +10,7 @@ export const SearchBar = ({ onSearch }) => {
 
     return (
         <div className="SearchBar">
-            <form onSubmit={onSearch[input]}>
+            <form onSubmit={(()=>onSearch(input))}>
             <input placeholder="Search..." type="text" onChange={inputChangeHandler}/>
             <button className="SearchButton" type="submit">SEARCH</button>
             </form>

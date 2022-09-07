@@ -5,16 +5,14 @@ array.
 There is also the async function getComments, which returns the comment object. This is used by the
 CommentList component. */
 
-const removeAmp = url => {
-    return url.replaceAll('amp;', '');
-};
 
-const redditTest = async (searchTerm) => {
+export const getSubRedditPosts = async (subReddit) => {
     try {
-        const response = await fetch(`https://www.reddit.com/r/${searchTerm}.json?`);
+        const response = await fetch(`https://www.reddit.com/${subReddit}.json?limit=99`);
         if (response.ok) {
             const jsonResponse = await response.json();
-            return jsonResponse;
+            const data = formatData(jsonResponse.data.children);
+            return data;
 
         }
     } catch (err) {
@@ -23,24 +21,34 @@ const redditTest = async (searchTerm) => {
 
 };
 
-export const getPostData = async (searchTerm) => {
-    const listings = await redditTest(searchTerm);
-    const children = listings.data.children;
-    console.log(children);
+export const getSearchPosts = async (search) => {
+    try {
+        console.log(search);
+        const response = await fetch (`https://www.reddit.com/search.json?q=${search}`);
+        if (response.ok) {
+            const jsonResponse = await response.json();
+            const data = formatData(jsonResponse.data.children)
+            return data;
+        }
+    } catch (err) {
+        console.group(err);
+    }
+};
+
+const formatData = async (jsonData) => {
     const data = [{}];
     let c = 0;
-    for (let i = 0; i < children.length; i++) {
-        if (children[i].data.domain.includes('i.redd.it')) {
+    for (let i = 0; i < jsonData.length; i++) {
+        if (jsonData[i].data.domain.includes('i.redd.it')) {
             data[c] = {
-           author: children[i].data.author,
-           subreddit: children[i].data.subreddit,
-           title: children[i].data.title,
-           media: children[i].data.url,
-           permalink: children[i].data.permalink,
+           author: jsonData[i].data.author,
+           subreddit: jsonData[i].data.subreddit,
+           title: jsonData[i].data.title,
+           media: jsonData[i].data.url,
+           permalink: jsonData[i].data.permalink,
         }
         c++;
     }}
-    console.log(data);
     return data;
 };
 
