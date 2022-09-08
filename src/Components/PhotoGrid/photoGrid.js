@@ -2,7 +2,7 @@ import React from 'react';
 import { Post } from '../Post/Post';
 import './PhotoGrid.css';
 
-export const PhotoGrid = ({ items, homebtn }) => {
+export const PhotoGrid = ({ items }) => {
     /* This is a small workaround code - when selecting a subreddit from the sidebar, occasionally an edge
     case would occur where an empty array was returned with an empty object. The original solution of 
     checking items.length > 0 would then return a single empty post with a non-functional comment button.
@@ -18,7 +18,7 @@ export const PhotoGrid = ({ items, homebtn }) => {
             <h2>Sorry, no results were found.</h2>
             {/* the homebtn OnClick event fires the original render of getSubData('/r/popular').
              BIG BRAIN, I know. */}
-            <button onClick={(() => homebtn('/r/popular'))}>Home</button>
+            <button>Home</button>
         </div>
     )
 };
