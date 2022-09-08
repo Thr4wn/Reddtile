@@ -23,7 +23,6 @@ export const getSubRedditPosts = async (subReddit) => {
 
 export const getSearchPosts = async (search) => {
     try {
-        console.log(search);
         const response = await fetch (`https://www.reddit.com/search.json?q=${search}`);
         if (response.ok) {
             const jsonResponse = await response.json();
@@ -31,7 +30,7 @@ export const getSearchPosts = async (search) => {
             return data;
         }
     } catch (err) {
-        console.group(err);
+        console.log(err);
     }
 };
 

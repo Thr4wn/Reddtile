@@ -15,22 +15,34 @@ export default function App() {
 /* an async function that queries the API for particular subs */
 const getSubData = async (subReddit) => {
   const results = await getSubRedditPosts(subReddit);
-  //Set state with the results
-  setItems(results);
+  
+  /* What follows is a workaround also used in getSearchData to deal with edge cases. We check the array of
+  objects to make sure valid posts are returned and, if so, set state with the results. If what is returned
+  is invalid, we set state to be 0 - this condition is checked for in PhotoGrid, where it will trigger
+  an alternate render. */
+  if(results[0].author) {
+    //set state with the results
+    setItems(results);
+  } else {
+    setItems(0);
+  }
   };
 
 const getSearchData = async (searchTerm) => {
   const search = searchTerm.replaceAll(' ', '%20');
   const results = await getSearchPosts(search);
-  console.log(results);
-  //set state with the results
-  setItems(results);
+  if(results[0].author) {
+    //set state with the results
+    setItems(results);
+  } else {
+    setItems(0);
+  }
 };
 
 
  /*useEffect returns the initial view of data on render - the most popular image posts on reddit */
  useEffect(() => {
-  getSubData('r/popular');
+  getSubData('/r/popular');
 }, []);
   
   /* toggleMenu function changes the boolean state of sidebar, a value which is passed to the SubReddit 
@@ -50,7 +62,7 @@ const getSearchData = async (searchTerm) => {
         <button className="btn" onClick={toggleMenu}>Subreddits</button>
       </div>
       <div className="body">
-        <PhotoGrid items={items} homebtn={getSubData} />
+        <PhotoGrid items={items} homeBtn={getSubData} />
       </div>
     </div>
   );
