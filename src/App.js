@@ -44,13 +44,13 @@ const getSearchData = async (searchTerm) => {
       <SubReddit showSidebar={sidebar} getSubData={getSubData} />
       <div className="Header">
         <div className="Logo">
-          <h2><span>R</span>eddtile</h2>
+          <button onClick={() => getSubData('/r/popular')}><span>R</span>eddtile</button>
         </div>
         <SearchBar onSearch={getSearchData} />
         <button className="btn" onClick={toggleMenu}>Subreddits</button>
       </div>
       <div className="body">
-        <PhotoGrid items={items} />
+        <PhotoGrid items={items} homebtn={getSubData} />
       </div>
     </div>
   );

@@ -16,14 +16,17 @@
 
 }
 
-.Logo h2 {
+.Logo button {
   font-size: 2rem;
+  font-weight: bold;
   color: black;
   margin: 0.6rem;
-    
+  background-color: white; 
+  border: 0px;
+  
 }
 
-.Logo h2 span {
+.Logo button span {
     font-size: 2.5rem;
     color: orangered;
 }

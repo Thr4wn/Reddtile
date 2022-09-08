@@ -3,3 +3,19 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
+
+.noneFound {
+    text-align: center;
+
+}
+
+.noneFound button {
+    border-radius: 5px;
+    background-color: orangered;
+    box-shadow: 0px 2px 2px #afafb4;
+    font-size: 1rem;
+    color: white;
+    height: 2em;
+    border: 0px;
+    opacity: 0.75;
+}
