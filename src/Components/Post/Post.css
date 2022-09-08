@@ -17,8 +17,10 @@
     border-radius: 5%;
     width: 25vw;
     height: auto;
+}
 
-
+.post img:hover {
+    opacity: .75;
 }
 
 .info {
