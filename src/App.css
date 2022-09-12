@@ -120,4 +120,36 @@ button {
     opacity: 0.75;
   
   }
+
+  .bm-menu-wrap {
+    width: 100vw;
+    right: auto;
+  }
+
+  .bm-cross-button {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin: 16px;
+  }
+  
+  .bm-cross {
+    background: #a5a1a1;
+  }
+  
+  .bm-menu {
+    background: rgb(14, 12, 25);
+    padding: 2em 1em 0;
+    font-size: 1rem;
+  }
+
+  .bm-item-list {
+    color: black;
+  }
+
+  .bm-item {
+    margin-bottom: 1.5rem;
+    margin-left: 5vw;
+    color: white;
+    transition: color 0.2s;
+  }
 }
