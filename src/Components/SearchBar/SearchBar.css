@@ -41,35 +41,30 @@
 
 .mobileSearch {
     --size: 2rem;
-    border: 2px solid darkslategray;
+    border: 2px solid;
+    border-color: rgba(0,0,0, .6);
     display: flex;
     border-radius: 100vh;
     height: var(--size);
     width: var(--size);
-    padding: 3px;
-    position: relative;
-    transition: width 300ms ease-in-out;
-    overflow: hidden;
+    margin: .25rem;
+    padding: 1px;
+    flex-grow: 1.5;
+    
 }
 
 .mobileSearchInput {
     border: 0;
+    border-radius: inherit;
     padding: .25em 1em;
-    flex-grow: 1;
     outline: 0;
-    font-size: 1.5rem;
-    background-color: gainsboro;
-    background: transparent;
-    position: absolute;
+    font-size: 1rem;
     top: 0;
     bottom: 0;
     left: 0;
-    line-height: calc(var(--size) - 3px);
-    opacity: 0;
-    cursor: pointer;
 }
 
-.mobilSearchInput:focus {
+.mobileSearchInput:focus {
     outline: 0;
 }
 
@@ -80,15 +75,4 @@
     border-radius: 100vh;
     background: transparent;
     margin-left: auto;
-}
-
-.mobileSearch:focus-within {
-    width: 100%;
-
-   
-}
-
-.mobileSearchInput:focus-within {
-    opacity: 1;
-    z-index: initial;
 }

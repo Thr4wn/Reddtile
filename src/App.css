@@ -87,3 +87,37 @@ button {
 .bm-overlay {
   background: rgba(0, 0, 0, 0.4);
 }
+
+/* Mobile styles */ 
+
+@media only screen and (max-width: 768px) {
+  .Logo {
+    padding: 1px;    
+  
+  }
+  
+  .Logo button {
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
+    margin: 0.3rem;
+    background-color: white; 
+    border: 0px;
+    
+  }
+  
+  .Logo button span {
+      font-size: 2rem;
+      color: orangered;
+  }
+
+  .mobileButton {
+    background-color: white;
+    font-size: 1.5rem;
+    color: orangered;
+    height: 2rem;
+    border: 0px;
+    opacity: 0.75;
+  
+  }
+}

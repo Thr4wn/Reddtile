@@ -14,8 +14,11 @@ export const SearchBar = ({ onSearch, isMobile }) => {
     if (isMobile) {
         return (
             <div className="mobileSearch">
-                <input className="mobileSearchInput" type="text" onChange={inputChangeHandler} />
-                <button className="mobileSearchSubmit"><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
+                <input className="mobileSearchInput" placeholder="Search..."
+                type="text" onChange={inputChangeHandler} />
+                <button className="mobileSearchSubmit" onClick={(() =>onSearch(input))}>
+                    <FontAwesomeIcon icon={faMagnifyingGlass} />
+                </button>
             </div>
         )
     }

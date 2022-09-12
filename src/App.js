@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { PhotoGrid } from './Components/PhotoGrid/PhotoGrid';
 import { SearchBar } from './Components/SearchBar/SearchBar';
 import { SubReddit } from './Components/SubReddit/SubReddit';
@@ -84,7 +86,11 @@ useEffect(() => {
           <button onClick={() => getSubData('/r/popular')}><span>R</span>eddtile</button>
         </div>
         <SearchBar onSearch={getSearchData} isMobile={isMobile} />
-        <button className="btn" onClick={toggleMenu}>Subreddits</button>
+        {(!isMobile ?  <button className="btn" onClick={toggleMenu}>Subreddits</button> 
+          : <button className="mobileButton" onClick={toggleMenu}>
+            <FontAwesomeIcon icon={faBars} />
+          </button>)}
+       
       </div>
       <div className="body">
         <PhotoGrid items={items} homeBtn={getSubData} isMobile={isMobile} />
