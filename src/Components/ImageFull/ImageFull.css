@@ -27,3 +27,16 @@
     margin-right: auto;
     margin-top: 10vh;
 }
+
+@media only screen and (max-width: 768px) {
+    
+    #fullImage {
+        opacity: 1;
+        width: 80vw;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10vh;
+    }
+}

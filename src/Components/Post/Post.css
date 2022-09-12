@@ -44,3 +44,53 @@
     border: 0px;
 
 }
+
+@media only screen and (max-width: 768px) {
+    .post {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        margin: 10vw;
+        width: 80vw;
+    }
+    
+    .post h3 {
+        font-size: 1rem;
+        word-wrap: break-word;
+    
+    }
+    
+    .post img {
+        border-radius: 5%;
+        width: 80vw;
+        height: auto;
+    }
+    
+    .post img:hover {
+        opacity: .75;
+    }
+    
+    .info {
+        justify-content: space-between;
+        width: 80vw;
+    
+    }
+    
+    .info p {
+        color: #afafb4;
+        opacity: 0.8;
+        margin: 0.25rem;
+    
+    }
+    
+    .comments {
+        border-radius: 5px;
+        background-color: #afafb4;
+        opacity: 0.8;
+        border: 0px;
+        font-size: 1.2rem;
+        color: white;
+        background-color: orangered;
+        padding: 0.25rem;    
+    }
+}
