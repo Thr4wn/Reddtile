@@ -3,10 +3,8 @@ import { Post } from '../Post/Post';
 import './PhotoGrid.css';
 
 export const PhotoGrid = ({ items, homeBtn }) => {
-    /* This is a small workaround code - when selecting a subreddit from the sidebar, occasionally an edge
-    case would occur where an empty array was returned with an empty object. The original solution of 
-    checking items.length > 0 would then return a single empty post with a non-functional comment button.
-     By checking to see if the first 'item' object in the array has an author, we avoid this bug. */
+    /* We check to make sure that the items object actually contains information before rendering
+    the grid of posts.  */
     if (items !== 0) {
     return (
     <div className="photoGrid">

@@ -10,6 +10,8 @@ export default function App() {
 
   const [sidebar, setSideBar] = useState(false);
   const [items, setItems] = useState([]);
+  // isMobile is given as a prop to components so they can render different jsx, not just css
+  const [isMobile, setIsMobile] = useState(false);
 
 
 /* an async function that queries the API for particular subs */
@@ -39,10 +41,33 @@ const getSearchData = async (searchTerm) => {
   }
 };
 
+//useEffect detects window size and changes state from desktop to mobile
+useEffect (() => {
+  if (window.innerWidth > 767) {
+    setIsMobile(false);
+  } else if (window.innerWidth < 767) {
+    setIsMobile(true);
+  }
+}, []);
 
  /*useEffect returns the initial view of data on render - the most popular image posts on reddit */
  useEffect(() => {
   getSubData('/r/popular');
+}, []);
+
+useEffect(() => {
+  const handleResize = () => {
+    if (window.innerWidth > 767) {
+      setIsMobile(false);
+    } else if (window.innerWidth < 767) {
+      setIsMobile(true);
+    }
+  };
+  window.addEventListener('resize', handleResize);
+
+  return () => {
+    window.removeEventListener('resize', handleResize);
+  };
 }, []);
   
   /* toggleMenu function changes the boolean state of sidebar, a value which is passed to the SubReddit 
@@ -53,16 +78,16 @@ const getSearchData = async (searchTerm) => {
 
   return (
     <div className="App">
-      <SubReddit showSidebar={sidebar} getSubData={getSubData} />
+      <SubReddit showSidebar={sidebar} getSubData={getSubData} isMobile={isMobile} />
       <div className="Header">
         <div className="Logo">
           <button onClick={() => getSubData('/r/popular')}><span>R</span>eddtile</button>
         </div>
-        <SearchBar onSearch={getSearchData} />
+        <SearchBar onSearch={getSearchData} isMobile={isMobile} />
         <button className="btn" onClick={toggleMenu}>Subreddits</button>
       </div>
       <div className="body">
-        <PhotoGrid items={items} homeBtn={getSubData} />
+        <PhotoGrid items={items} homeBtn={getSubData} isMobile={isMobile} />
       </div>
     </div>
   );
