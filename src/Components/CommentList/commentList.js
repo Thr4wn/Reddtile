@@ -1,7 +1,7 @@
 //Comment List component will map over comments and display them across the Photo Grid part of the screen.
 import React, { useState, useEffect } from 'react';
 import { Comment } from '../Comment/Comment';
-import { getComments } from '../Tester/Tester';
+import { getComments } from '../API/RedditAPI';
 import './CommentList.css';
 
 export const CommentList = ({ permalink, toggleComments }) => {

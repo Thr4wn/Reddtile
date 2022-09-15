@@ -5,7 +5,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { PhotoGrid } from './Components/PhotoGrid/PhotoGrid';
 import { SearchBar } from './Components/SearchBar/SearchBar';
 import { SubReddit } from './Components/SubReddit/SubReddit';
-import { getSearchPosts, getSubRedditPosts } from './Components/Tester/Tester';
+import { getSearchPosts, getSubRedditPosts } from './Components/API/RedditAPI';
 import { GridLoader } from 'react-spinners';
 
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { slide as Menu } from 'react-burger-menu';
-import { getSubreddits } from '../Tester/Tester';
+import { getSubreddits } from '../API/RedditAPI';
 
 export const SubReddit = ({ showSidebar, getSubData }) => {
   const [subs, setSubs] = useState([]);
