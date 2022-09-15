@@ -26,7 +26,7 @@ const {
     return (
     <div className="post">
         <h3>{title}</h3>
-        <img src={media} onClick={toggleImage} />
+        <img src={media} alt='Image from Reddit' onClick={toggleImage} />
         <div className="info">
             <p>{author}</p>
             <p>{subreddit}</p>
