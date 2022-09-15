@@ -105,10 +105,10 @@ useEffect(() => {
           <button onClick={() => getSubData('/r/popular')}><span>R</span>eddtile</button>
         </div>
         <SearchBar onSearch={getSearchData} isMobile={isMobile} />
-        {(!isMobile ?  <button className="btn" name='See Subreddits' onClick={toggleMenu}>Subreddits</button> 
+        {!isMobile ?  <button className="btn" name='See Subreddits' onClick={toggleMenu}>Subreddits</button> 
           : <button className="mobileButton" name="See Subreddits" onClick={toggleMenu}>
             <FontAwesomeIcon icon={faBars} />
-          </button>)}
+          </button>}
       </div>
       {isLoading ? 
         <div className='loader-container'>
