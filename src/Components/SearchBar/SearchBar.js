@@ -4,10 +4,10 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import './SearchBar.css';
 
 export const SearchBar = ({ onSearch, isMobile }) => {
-   const [input, setInput] = useState();
+   const [query, setQuery] = useState();
 
     const inputChangeHandler = (e) => {
-        setInput(e.target.value);
+        setQuery(e.target.value);
     };
 
 
@@ -16,7 +16,7 @@ export const SearchBar = ({ onSearch, isMobile }) => {
             <div className="mobileSearch">
                 <input className="mobileSearchInput" placeholder="Search..."
                 type="text" onChange={inputChangeHandler} />
-                <button className="mobileSearchSubmit" onClick={(() =>onSearch(input))}>
+                <button className="mobileSearchSubmit" onClick={(() => onSearch(query))}>
                     <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </button>
             </div>
@@ -24,9 +24,9 @@ export const SearchBar = ({ onSearch, isMobile }) => {
     }
     return (
         <div className="SearchBar">
-            <form onSubmit={(()=>onSearch(input))}>
+            <form onSubmit={(() => onSearch(query))}>
             <input placeholder="Search..." type="text" onChange={inputChangeHandler}/>
-            <button className="SearchButton" type="submit">SEARCH</button>
+            <button className="SearchButton">SEARCH</button>
             </form>
         </div>
     )
