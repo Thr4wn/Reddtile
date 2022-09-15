@@ -28,8 +28,8 @@ export default function App() {
 
 
 /* an async function that queries the API for particular subs */
-const getSubData = async (subReddit) => {
-  setIsLoading(true);
+const getSubData = async (subReddit) => { 
+    setIsLoading(true);
   const results = await getSubRedditPosts(subReddit);
   
   /* What follows is a workaround also used in getSearchData to deal with edge cases. We check the array of
