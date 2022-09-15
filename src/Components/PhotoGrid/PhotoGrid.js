@@ -16,7 +16,7 @@ export const PhotoGrid = ({ items, homeBtn }) => {
             <h2>Sorry, no results were found.</h2>
             {/* the homebtn OnClick event fires the original render of getSubData('/r/popular').
              BIG BRAIN, I know. */}
-            <button onClick={(() => homeBtn('/r/popular'))}>Home</button>
+            <button onClick={(() => homeBtn('r/popular'))}>Home</button>
         </div>
     )
 };

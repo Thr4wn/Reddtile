@@ -71,7 +71,7 @@ useEffect (() => {
 
  /*useEffect returns the initial view of data on render - the most popular image posts on reddit */
  useEffect(() => {
-  getSubData('/r/popular');
+  getSubData('r/popular');
 }, []);
 
 /* this is another effect that handles resizing of the window to set the mobile styles for the subReddit
@@ -102,7 +102,7 @@ useEffect(() => {
       <SubReddit showSidebar={sidebar} getSubData={getSubData} isMobile={isMobile} />
       <div className="Header">
         <div className="Logo">
-          <button onClick={() => getSubData('/r/popular')}><span>R</span>eddtile</button>
+          <button onClick={() => getSubData('r/popular')}><span>R</span>eddtile</button>
         </div>
         <SearchBar onSearch={getSearchData} isMobile={isMobile} />
         {!isMobile ?  <button className="btn" name='See Subreddits' onClick={toggleMenu}>Subreddits</button> 

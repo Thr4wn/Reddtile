@@ -12,7 +12,6 @@ export const SubReddit = ({ showSidebar, getSubData }) => {
       for (let c = 0; c < query.length; c++) {
         results[c] = query[c].data.display_name_prefixed;
       };
-      console.log(results);
       setSubs(results);
     };
 
