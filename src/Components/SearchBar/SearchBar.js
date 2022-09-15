@@ -8,6 +8,7 @@ export const SearchBar = ({ onSearch, isMobile }) => {
 
     const inputChangeHandler = (e) => {
         setQuery(e.target.value);
+        console.log(query);
     };
 
 
