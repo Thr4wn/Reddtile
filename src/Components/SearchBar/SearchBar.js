@@ -10,13 +10,18 @@ export const SearchBar = ({ onSearch, isMobile }) => {
         setQuery(e.target.value);
     };
 
+    const setSearch = (e) => {
+        e.preventDefault();
+        onSearch(query);
+    }
+
 
     if (isMobile) {
         return (
             <div className="mobileSearch">
                 <input className="mobileSearchInput" placeholder="Search..."
                 type="text" onChange={inputChangeHandler} />
-                <button className="mobileSearchSubmit" name="Search" onClick={(() => onSearch(query))}>
+                <button className="mobileSearchSubmit" name="Search" onClick={setSearch}>
                     <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </button>
             </div>
@@ -24,7 +29,7 @@ export const SearchBar = ({ onSearch, isMobile }) => {
     }
     return (
         <div className="SearchBar">
-            <form onSubmit={(() => onSearch(query))}>
+            <form onSubmit={setSearch}>
             <input placeholder="Search..." type="text" onChange={inputChangeHandler}/>
             <button className="SearchButton" name="Search">SEARCH</button>
             </form>

@@ -26,7 +26,7 @@ export const getSearchPosts = async (search) => {
         const response = await fetch (`https://www.reddit.com/search.json?q=${search}`);
         if (response.ok) {
             const jsonResponse = await response.json();
-            const data = formatData(jsonResponse.data.children)
+            const data = formatData(jsonResponse.data.children);
             return data;
         }
     } catch (err) {
