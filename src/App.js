@@ -8,6 +8,7 @@ import { SubReddit } from "./Components/SubReddit/SubReddit";
 import { getSearchPosts, getSubRedditPosts } from "./Components/API/RedditAPI";
 import { GridLoader } from "react-spinners";
 import { useMobileState } from "./state";
+import { MainLayout } from "./layouts/main-layout";
 
 export default function App() {
   const [sidebar, setSideBar] = useState(false);
@@ -69,14 +70,9 @@ export default function App() {
     setSideBar(!sidebar);
   };
 
-  return (
-    <div className="App">
-      <SubReddit
-        showSidebar={sidebar}
-        getSubData={getSubData}
-        isMobile={isMobile}
-      />
-      <div className="Header">
+  function Header() {
+    return (
+      <>
         <div className="Logo">
           <button onClick={() => getSubData("r/popular")}>
             <span>R</span>eddtile
@@ -96,16 +92,25 @@ export default function App() {
             <FontAwesomeIcon icon={faBars} />
           </button>
         )}
+      </>
+    );
+  }
+
+  function Loader() {
+    return (
+      <div className="loader-container">
+        <GridLoader color={"#ff4500"} cssOverride={override} size={50} />
       </div>
-      {isLoading ? (
-        <div className="loader-container">
-          <GridLoader color={"#ff4500"} cssOverride={override} size={50} />
-        </div>
-      ) : (
-        <div className="body">
-          <PhotoGrid items={items} homeBtn={getSubData} isMobile={isMobile} />
-        </div>
-      )}
-    </div>
-  );
+    );
+  }
+
+  function Body() {
+    return (
+      <div className="body">
+        <PhotoGrid items={items} homeBtn={getSubData} isMobile={isMobile} />
+      </div>
+    );
+  }
+
+  return <MainLayout Header={Header} Loader={Loader} Body={Body}></MainLayout>;
 }
